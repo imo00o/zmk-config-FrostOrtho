@@ -49,7 +49,7 @@
             bindings = <
 &kp Q                 &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O         &kp P
 &kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &lt 5 L       &kp MINUS
-&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD    &lt 6 QUESTION
+&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD    &lt 6 SLASH
 &mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &kp DEL    &lt 4 ESCAPE  &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
@@ -129,7 +129,7 @@
 &kp EXCLAMATION  &kp LEFT_BRACKET  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                &kp LS(N5)        &kp EQUAL   &kp LS(NUMBER_6)      &kp LS(N8)         &kp LS(N9)
 &kp QUESTION     &kp LS(SQT)       &kp LS(MINUS)     &kp MINUS         &kp LS(SEMI)              &kp LS(NUMBER_2)  &kp LS(N7)  &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACE    &kp PIPE
 &kp LEFT_SHIFT   &trans            &trans            &kp SEMICOLON     &kp SQT                   &kp SEMICOLON     &kp SQT     &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans           &trans            &trans            &trans            &trans        &trans      &trans            &trans      &trans                &kp INT_RO         &kp SLASH
+&trans           &trans            &trans            &trans            &trans        &trans      &trans            &trans      &trans                &trans             &trans
             >;
         };
     };

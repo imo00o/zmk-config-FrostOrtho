@@ -63,7 +63,7 @@
 &trans  &trans  &trans  &trans  &trans              &kp F1  &kp F2  &kp F3  &kp F4   &kp F5
 &trans  &trans  &trans  &trans  &trans              &kp F6  &kp F7  &kp F8  &kp F9   &kp F10
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans   &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp LC(MINUS) LC(SEMICOLON)>;
@@ -71,10 +71,10 @@
 
         layer_2 {
             bindings = <
-&kp MINUS          &kp N7  &kp N8  &kp N9  &kp LS(SEMICOLON)              &kp LS(N5)     &kp EQUAL   &kp LS(N6)            &kp LS(N8)         &kp LS(N9)
-&kp SLASH          &kp N4  &kp N5  &kp N6  &kp LS(SQT)                    &kp LS(N2)     &kp LS(N7)  &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACE    &kp PIPE
-&mt LEFT_SHIFT N0  &kp N1  &kp N2  &kp N3  &kp PERIOD                     &kp SEMICOLON  &kp SQT     &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
-&kp LS(MINUS)      &trans  &trans  &trans  &trans             &trans      &trans         &trans      &trans                &kp F10            &kp ESCAPE
+&kp MINUS          &kp N7  &kp N8  &kp N9  &kp LS(SEMICOLON)              &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)      &kp LS(NUMBER_7)   &kp LEFT_BRACKET
+&kp SLASH          &kp N4  &kp N5  &kp N6  &kp LS(SQT)                    &kp LS(N2)        &kp LS(N7)        &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_8)   &kp LS(NUMBER_9)
+&mt LEFT_SHIFT N0  &kp N1  &kp N2  &kp N3  &kp PERIOD                     &kp SEMICOLON     &kp SQT           &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
+&trans             &trans  &trans  &trans  &trans             &trans      &trans            &trans            &trans                &kp LS(NUMBER_1)   &kp EQUAL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -126,10 +126,10 @@
 
         layer_7 {
             bindings = <
-&kp EXCLAMATION  &kp LEFT_BRACKET  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(N5)                &kp LS(N5)        &kp EQUAL   &kp LS(NUMBER_6)      &kp LS(N8)         &kp LS(N9)
-&kp QUESTION     &kp LS(SQT)       &kp LS(MINUS)     &kp MINUS         &kp LS(SEMI)              &kp LS(NUMBER_2)  &kp LS(N7)  &kp LS(LEFT_BRACKET)  &kp RIGHT_BRACE    &kp PIPE
-&kp LEFT_SHIFT   &trans            &trans            &kp SEMICOLON     &kp SQT                   &kp SEMICOLON     &kp SQT     &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans           &trans            &trans            &trans            &trans        &trans      &trans            &trans      &trans                &kp F10            &kp ESCAPE
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

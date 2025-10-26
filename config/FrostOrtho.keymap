@@ -34,14 +34,6 @@
 
             label = "SCREENSHOT";
         };
-
-        ins_copy: ins_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 7>, <&macro_press>, <&kp INS &kp LEFT_CONTROL>;
-
-            label = "INS_COPY";
-        };
     };
 
     behaviors {

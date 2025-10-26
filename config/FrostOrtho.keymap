@@ -34,6 +34,14 @@
 
             label = "SCREENSHOT";
         };
+
+        ins_copy: ins_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 7>, <&macro_press>, <&kp INS &kp LEFT_CONTROL>;
+
+            label = "INS_COPY";
+        };
     };
 
     behaviors {
@@ -139,10 +147,10 @@
 
         layer_7 {
             bindings = <
-&trans  &trans       &trans   &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans       &trans   &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &screenshot  &kp INS  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans       &trans   &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &kp INS      &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &screenshot  &kp LC(INS)  &kp LS(INS)  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans       &trans       &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

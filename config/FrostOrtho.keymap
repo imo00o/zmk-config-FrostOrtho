@@ -21,6 +21,19 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        screenshot: screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&to 7>,
+                <&macro_press>,
+                <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>,
+                <&macro_release>,
+                <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>;
+
+            label = "SCREENSHOT";
+        };
     };
 
     behaviors {
@@ -126,10 +139,10 @@
 
         layer_7 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&trans       &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans       &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&screenshot  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

@@ -139,10 +139,10 @@
 
         layer_7 {
             bindings = <
-&trans       &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&screenshot  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans   &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans   &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &screenshot  &kp INS  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans       &trans   &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

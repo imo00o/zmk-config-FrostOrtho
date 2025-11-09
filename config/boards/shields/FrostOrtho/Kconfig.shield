@@ -1,0 +1,5 @@
+config SHIELD_FROSTORTHO_R
+    def_bool $(shields_list_contains,FrostOrtho_R)
+
+config SHIELD_FROSTORTHO_L
+    def_bool $(shields_list_contains,FrostOrtho_L)

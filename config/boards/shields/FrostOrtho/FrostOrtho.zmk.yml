@@ -1,0 +1,8 @@
+file_format: "1.0.0"
+id: FrostOrtho
+name: FrostOrtho
+type: shield
+url: https://github.com/imo00o/zmk-config-FrostOrtho
+requires: [seeeduino_xiao_ble]
+features:
+  - keys

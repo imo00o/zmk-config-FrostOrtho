@@ -10,7 +10,7 @@ on:
     branches:
       - main
     paths:
-      - 'config/**' # configフォルダ内の全てのファイル変更をトリガーとする
+      - 'config/**'
   workflow_dispatch:
 
 jobs:

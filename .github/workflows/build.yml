@@ -1,4 +1,17 @@
-on: [push, pull_request, workflow_dispatch]
+name: Build ZMK Firmware
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'config/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'config/**' # configフォルダ内の全てのファイル変更をトリガーとする
+  workflow_dispatch:
 
 jobs:
   build:

@@ -5,12 +5,14 @@ on:
     branches:
       - main-jp
       - main-us
+      - develop
     paths:
       - 'config/**'
   pull_request:
     branches:
       - main-jp
       - main-us
+      - develop
     paths:
       - 'config/**'
   workflow_dispatch:

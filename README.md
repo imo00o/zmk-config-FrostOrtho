@@ -1,8 +1,10 @@
 # FrostOrtho
 
 ## キーマップの変更方法
-- 日本語配列用キーマップ：https://github.com/imo00o/zmk-config-FrostOrtho-JP
-- US配列用キーマップ：https://github.com/imo00o/zmk-config-FrostOrtho-US
+
+使用したい配列に従い、ブランチを選択してください。
+- 日本語配列用キーマップ：main-jp
+- US配列用キーマップ：main-us
 
 
 ### Fork

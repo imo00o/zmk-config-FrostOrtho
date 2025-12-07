@@ -3,12 +3,14 @@ name: Build ZMK Firmware
 on:
   push:
     branches:
-      - main
+      - main-jp
+      - main-us
     paths:
       - 'config/**'
   pull_request:
     branches:
-      - main
+      - main-jp
+      - main-us
     paths:
       - 'config/**'
   workflow_dispatch:

@@ -38,12 +38,7 @@
         shift_click: shift_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&to 6>,
-                <&macro_press>,
-                <&mkp MB3 &kp LEFT_SHIFT>,
-                <&macro_release>,
-                <&mkp MB3 &kp LEFT_SHIFT>;
+            bindings = <&to 6>, <&macro_press>, <&mkp MB3 &kp LEFT_SHIFT>;
 
             label = "SHIFT_CLICK";
         };

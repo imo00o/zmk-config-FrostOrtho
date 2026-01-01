@@ -36,16 +36,14 @@
 
         input-processors = <
             &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
-            &zip_xy_scaler 7 3 // カーソル移動速度7/3倍
-            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) // カーソルの移動方向
+            // &zip_xy_scaler 7 3 // カーソル移動速度7/3倍
+            // &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) // カーソルの移動方向
         >;
 
         scroller {
             layers = <5>; // スクロールレイヤー
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 2 3 // スクロール速度2/3倍
-                // &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロールのY方向を反転
             >;
         };
     };

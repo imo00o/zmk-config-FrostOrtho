@@ -13,9 +13,9 @@
 };
 
 // AML クリックしたときにタイムアウトを延長
-// &mkp_input_listener {
-//     input-processors = <&zip_temp_layer 6 10000>;
-// };
+&mkp_input_listener {
+    input-processors = <&zip_temp_layer 6 10000>;
+};
 
 / {
     combos { compatible = "zmk,combos"; };

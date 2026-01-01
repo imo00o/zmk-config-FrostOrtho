@@ -7,26 +7,26 @@
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 // AMLから離脱しないキー
-//&zip_temp_layer {
-//    require-prior-idle-ms = <200>;
-//    excluded-positions = <
-//        16 // J 左クリック
-//        17 // K 右クリック
-//        18 // L 中央クリック
-//        20 // Z Shift
-//        30 // Control
-//    >;
-//};
+&zip_temp_layer {
+    require-prior-idle-ms = <200>;
+    excluded-positions = <
+        16 // J 左クリック
+        17 // K 右クリック
+        18 // L 中央クリック
+        20 // Z Shift
+        30 // Control
+    >;
+};
 
 / {
     trackball_listener: trackball_listener {
@@ -35,7 +35,7 @@
         device = <&trackball>;
 
         input-processors = <
-            // &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
+            &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
             &zip_xy_scaler 3 3 // カーソル移動量3/3倍
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
         >;

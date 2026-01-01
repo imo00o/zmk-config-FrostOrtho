@@ -39,14 +39,16 @@
             // &zip_xy_scaler 7 3 // カーソル移動速度7/3倍
             &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT) // カーソルの移動方向
         >;
+    };
+};
 
-        scroller {
-            layers = <5>; // スクロールレイヤー
-            input-processors = <
-                &zip_xy_to_scroll_mapper
-                &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-            >;
-        };
+&trackball_listener {
+    scroller {
+        layers = <5>; // スクロールレイヤー
+        input-processors = <
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
+        >;
     };
 };
 

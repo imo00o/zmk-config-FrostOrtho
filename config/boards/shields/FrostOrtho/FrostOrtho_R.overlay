@@ -37,6 +37,7 @@
         input-processors = <
             &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
             &zip_xy_scaler 5 3 // カーソル移動速度5/3倍
+            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT) // カーソルの移動方向
         >;
 
         scroller {

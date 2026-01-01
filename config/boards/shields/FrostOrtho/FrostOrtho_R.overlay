@@ -19,9 +19,11 @@
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = <
-        16 // J
-        17 // K
-        18 // L
+        16 // J 左クリック
+        17 // K 右クリック
+        18 // L 中央クリック
+        20 // Z Shift
+        30 // Control
     >;
 };
 
@@ -30,7 +32,18 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        input-processors = <&zip_temp_layer 6 100000>; // AML
+
+        input-processors = <
+            &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
+            &zip_xy_scaler 3 2 // カーソル移動速度3/2倍
+        >;
+
+        scroller {
+            layers = <5>; // スクロールレイヤー
+            input-processors = <
+                &zip_xy_to_scroll_mapper
+            >;
+        };
     };
 };
 
@@ -68,7 +81,7 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         // automouse-layer = <6>;
-        scroll-layers = <5>;
+        // scroll-layers = <5>;
     };
 };
 

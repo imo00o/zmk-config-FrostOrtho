@@ -36,7 +36,7 @@
 
         input-processors = <
             &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
-            &zip_xy_scaler 5 3 // カーソル移動速度3/2倍
+            &zip_xy_scaler 5 3 // カーソル移動速度5/3倍
         >;
 
         scroller {

@@ -36,7 +36,7 @@
 
         input-processors = <
             &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
-            &zip_xy_scaler 3 3 // カーソル移動速度3/3倍
+            &zip_xy_scaler 3 3 // カーソル移動量3/3倍
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
         >;
     };
@@ -46,7 +46,8 @@
     scroller {
         layers = <5>; // スクロールレイヤー
         input-processors = <
-            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_scroll_scaler 3 3 // スクロール量3/3倍
             &zip_xy_to_scroll_mapper
         >;
     };

@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 #define MOUSE 6
@@ -10,6 +11,11 @@
     flavor = "balanced";
     quick-tap-ms = <0>;
 };
+
+// AML クリックしたときにタイムアウトを延長
+// &mkp_input_listener {
+//     input-processors = <&zip_temp_layer 6 10000>;
+// };
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -136,10 +142,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &trans        &trans    &trans    &trans    &trans
 &trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &trans        &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;

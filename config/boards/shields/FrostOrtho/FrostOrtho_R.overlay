@@ -1,4 +1,6 @@
 #include "FrostOrtho.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &default_transform {
     col-offset = <6>;
@@ -14,12 +16,40 @@
             ;
 };
 
+// AMLから離脱しないキー
+//&zip_temp_layer {
+//    require-prior-idle-ms = <200>;
+//    excluded-positions = <
+//        16 // J 左クリック
+//        17 // K 右クリック
+//        18 // L 中央クリック
+//        20 // Z Shift
+//        30 // Control
+//    >;
+//};
+
 / {
-    trackball_listener {
+    trackball_listener: trackball_listener {
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
+        input-processors = <
+            // &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
+            &zip_xy_scaler 3 3 // カーソル移動量3/3倍
+            &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
+        >;
+    };
+};
+
+&trackball_listener {
+    scroller {
+        layers = <5>; // スクロールレイヤー
+        input-processors = <
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_scroll_scaler 3 3 // スクロール量3/3倍
+            &zip_xy_to_scroll_mapper
+        >;
     };
 };
 
@@ -56,8 +86,8 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <6>;
-        scroll-layers = <5>;
+        // automouse-layer = <6>;
+        // scroll-layers = <5>;
     };
 };
 

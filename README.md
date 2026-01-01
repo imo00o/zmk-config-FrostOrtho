@@ -44,7 +44,7 @@
 ![alt text](/img/image-10.png)
 
 12. 「Only select repositories」を選択し、「Select repositories」からzmk-config-FrostOrthoを選択する。  
-Installをクリックする。
+Installをクリックする。  
 ![alt text](/img/image-11.png)
 
 

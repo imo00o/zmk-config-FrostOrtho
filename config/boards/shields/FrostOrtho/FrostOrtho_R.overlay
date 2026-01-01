@@ -44,8 +44,8 @@
             layers = <5>; // スクロールレイヤー
             input-processors = <
                 &zip_xy_to_scroll_mapper
-                &zip_scroll_scaler 1 2 // スクロール速度2/1倍
-                &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロールのY方向を反転
+                &zip_scroll_scaler 2 3 // スクロール速度2/3倍
+                // &zip_scroll_transform INPUT_TRANSFORM_Y_INVERT // スクロールのY方向を反転
             >;
         };
     };

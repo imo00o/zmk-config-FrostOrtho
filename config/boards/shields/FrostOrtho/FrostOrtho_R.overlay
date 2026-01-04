@@ -69,9 +69,9 @@
         layers = <5>; // スクロールレイヤー
         input-processors = <
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 3 3 // X軸スクロール量3/3倍
             &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
-            &zip_xy_to_scroll_mapper
         >;
     };
 };

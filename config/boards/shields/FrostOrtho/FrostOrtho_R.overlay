@@ -1,6 +1,7 @@
 #include "FrostOrtho.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
@@ -49,6 +50,38 @@
         input-processors = <
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
             &zip_scroll_scaler 3 3 // スクロール量3/3倍
+            &zip_xy_to_scroll_mapper
+        >;
+    };
+};
+
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+
+        zip_scroll_y_scaler: zip_scroll_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+    };
+};
+
+&trackball_listener {
+    scroller {
+        layers = <5>; // スクロールレイヤー
+        input-processors = <
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_scroll_x_scaler 3 3 // X軸スクロール量3/3倍
+            &zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
             &zip_xy_to_scroll_mapper
         >;
     };

@@ -1,19 +1,20 @@
 #include "FrostOrtho.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
-            , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            ;
+    col-gpios
+        = <&xiao_d 10 GPIO_ACTIVE_HIGH>
+        , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
+        , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+        , <&gpio0 10 GPIO_ACTIVE_HIGH>
+        ;
 };
 
 // AMLから離脱しないキー
@@ -25,6 +26,7 @@
         18 // L 中央クリック
         20 // Z Shift
         30 // Control
+        32 // Alt
     >;
 };
 
@@ -42,13 +44,43 @@
     };
 };
 
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+
+        zip_scroll_y_scaler: zip_scroll_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+    };
+};
+
 &trackball_listener {
-    scroller {
-        layers = <5>; // スクロールレイヤー
+    scroller_y {
+        layers = <5>; // 縦スクロールレイヤー
         input-processors = <
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
-            &zip_scroll_scaler 3 3 // スクロール量3/3倍
             &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
+            &zip_scroll_y_scaler 3 3 // Y軸スクロール量3/3倍
+        >;
+    };
+    scroller_x {
+        layers = <7>; // 横スクロールレイヤー
+        input-processors = <
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 3 3 // X軸スクロール量3/3倍
+            &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
         >;
     };
 };

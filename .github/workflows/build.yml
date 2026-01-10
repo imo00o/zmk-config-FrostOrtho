@@ -5,6 +5,8 @@ on:
     branches:
       - main-jp
       - main-us
+      - main-jp-aml
+      - main-us-aml
       - develop-jp
       - develop-us
     paths:
@@ -13,6 +15,8 @@ on:
     branches:
       - main-jp
       - main-us
+      - main-jp-aml
+      - main-us-aml
       - develop-jp
       - develop-us
     paths:

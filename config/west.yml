@@ -17,5 +17,9 @@ manifest:
     - name: zmk-rgbled-widget
       remote: imo00o
       revision: main
+    - name: prospector-zmk-module
+      remote: prospector
+      revision: v1.0.0
+      path: modules/prospector-zmk-module
   self:
     path: config

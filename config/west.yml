@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/imo00o
     - name: caksoylar
       url-base: https://github.com/imo00o
+    - name: prospector
+      url-base: https://github.com/t-ogura
   projects:
     - name: zmk
       remote: zmkfirmware

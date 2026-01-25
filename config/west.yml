@@ -18,7 +18,7 @@ manifest:
       remote: imo00o
       revision: main
     - name: prospector-zmk-module
-      remote: prospector
+      remote: imo00o
       revision: v1.0.0
       path: modules/prospector-zmk-module
   self:

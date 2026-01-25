@@ -9,6 +9,7 @@ on:
       - main-us-aml
       - develop-jp
       - develop-us
+      - muino-setting
     paths:
       - 'config/**'
   pull_request:
@@ -19,6 +20,7 @@ on:
       - main-us-aml
       - develop-jp
       - develop-us
+      - muino-setting
     paths:
       - 'config/**'
   workflow_dispatch:

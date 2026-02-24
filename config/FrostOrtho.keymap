@@ -163,7 +163,7 @@
         layer_7 {
             bindings = <
 &kp LC(Z)  &kp LC(Y)    &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &kp INS      &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
+&trans     &trans       &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
 &trans     &screenshot  &kp LC(INS)  &kp LS(INS)  &trans              &trans  &trans  &trans  &trans  &trans
 &trans     &trans       &trans       &trans       &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;

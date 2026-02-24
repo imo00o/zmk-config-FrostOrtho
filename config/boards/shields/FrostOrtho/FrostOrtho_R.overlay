@@ -38,10 +38,7 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        input-processors = <
-            &mouse_runtime_input_processor
-            &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
-        >;
+        input-processors = <&mouse_runtime_input_processor>;
         // input-processors = <
             // &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
             // &zip_xy_scaler 3 3 // カーソル移動量3/3倍

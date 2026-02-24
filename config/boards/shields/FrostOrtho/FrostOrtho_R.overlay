@@ -22,8 +22,6 @@
     require-prior-idle-ms = <200>;
     excluded-positions = <
         16 // J 左クリック
-        17 // K 右クリック
-        18 // L 中央クリック
         20 // Z Shift
         30 // Control
         32 // Alt

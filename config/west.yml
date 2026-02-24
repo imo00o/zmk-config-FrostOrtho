@@ -1,4 +1,37 @@
 manifest:
+  defaults:
+    revision: main
+  remotes:
+    - name: cormoran
+      url-base: https://github.com/cormoran
+    # 既存のリモートはそのまま維持
+  projects:
+    # ZMK: DYA Studio 用カスタム RPC サブシステム付き cormoran fork
+    - name: zmk
+      remote: cormoran
+      revision: v0.3-branch+dya
+      import: app/west.yml
+
+    # DYA Studio モジュール（すべて cormoran リポジトリ）
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+
+    # その他のモジュール（トラックボールドライバー、LED ウィジェット等）
+    # ...
+  self:
+    path: config
+
+manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
@@ -8,10 +41,15 @@ manifest:
       url-base: https://github.com/imo00o
     - name: prospector
       url-base: https://github.com/t-ogura
+    - name: cormoran
+      url-base: https://github.com/cormoran
   projects:
+    #　- name: zmk
+    #   remote: zmkfirmware
+    #   revision: v0.3.0
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: imo00o
@@ -22,6 +60,19 @@ manifest:
     - name: prospector-zmk-module
       remote: prospector
       revision: v2.0.0
-      path: modules/prospector-zmk-module
+      path: modules/prospector-zmk-modul
+    # DYA Studio モジュール（すべて cormoran リポジトリ）
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
   self:
     path: config

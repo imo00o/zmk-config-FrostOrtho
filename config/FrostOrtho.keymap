@@ -111,8 +111,8 @@
         layer_3 {
             bindings = <
 &kp ESCAPE      &trans          &kp UP_ARROW    &trans           &trans              &trans  &trans  &trans  &trans  &trans
-&trans          &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans              &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp HOME        &trans          &kp END          &trans              &trans  &trans  &trans  &trans  &trans
+&kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END             &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans          &trans          &trans           &trans              &trans  &trans  &trans  &trans  &trans
 &trans          &trans          &trans          &trans           &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
 

@@ -66,6 +66,7 @@
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
             tap-ms = <20>;
+        };
         
         rsr_vol: rsr_vol {
             compatible = "zmk,behavior-runtime-sensor-rotate";

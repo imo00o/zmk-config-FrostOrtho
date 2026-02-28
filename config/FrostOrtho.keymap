@@ -41,13 +41,6 @@
             label = "SCREENSHOT";
         };
 
-        shift_click: shift_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 6>, <&macro_press>, <&mkp MB3 &kp LEFT_SHIFT>;
-
-            label = "SHIFT_CLICK";
-        };
     };
 
     behaviors {
@@ -60,20 +53,28 @@
             tapping-term-ms = <300>;
         };
 
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        // scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        //     compatible = "zmk,behavior-sensor-rotate";
+        //     #sensor-binding-cells = <0>;
+        //     bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <20>;
+        //     tap-ms = <20>;
+        // };
+
+        croll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <5>;
+            cw-binding = <&msc SCRL_DOWN>;
+            ccw-binding = <&msc SCRL_UP>;
         };
-        
+
         rsr_vol: rsr_vol {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <5>;
-            cw-binding = <&kp C_VOL_UP>;
-            ccw-binding = <&kp C_VOL_DN>;
+            cw-binding = <&kp C_VOL_DN>;
+            ccw-binding = <&kp C_VOL_UP>;
         };
     };
 
@@ -99,7 +100,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp DEL  &trans  &trans   &kp ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(MINUS) LC(SEMICOLON)>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         layer_2 {
@@ -110,9 +111,7 @@
 &mt LEFT_CONTROL LS(MINUS)  &kp ENTER  &trans  &trans  &trans             &trans      &trans            &trans            &trans                &kp LS(NUMBER_1)   &kp EQUAL
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         layer_3 {
@@ -123,9 +122,7 @@
 &trans          &trans          &trans          &trans           &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         layer_4 {
@@ -136,9 +133,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans        &trans        &trans        &bt BT_CLR_ALL
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         layer_5 {
@@ -149,9 +144,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         MOUSE {
@@ -162,9 +155,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
         layer_7 {
@@ -175,9 +166,7 @@
 &trans     &trans       &trans       &trans       &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings =
-                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
-                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&rsr_vol &rsr_trans>;
         };
     };
 };

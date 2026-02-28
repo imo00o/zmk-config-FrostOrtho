@@ -28,7 +28,7 @@ manifest:
       remote: prospector
       revision: v2.0.0
       path: modules/prospector-zmk-modul
-    # DYA Studio モジュール（すべて cormoran リポジトリ）
+    # DYA Studio モジュール
     - name: zmk-module-ble-management
       remote: cormoran
       revision: main
@@ -39,6 +39,9 @@ manifest:
       remote: cormoran
       revision: main
     - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
   self:

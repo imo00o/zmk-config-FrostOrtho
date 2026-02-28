@@ -52,24 +52,28 @@
             #binding-cells = <2>;
             tapping-term-ms = <300>;
         };
-
-        // scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-        //     compatible = "zmk,behavior-sensor-rotate";
-        //     #sensor-binding-cells = <0>;
-        //     bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-        //     tap-ms = <20>;
-        // };
-
-        croll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-runtime-sensor-rotate";
+        // Kyemap Editor用
+        scroll_up_down_ke: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        };
+        rsr_vol_ke: rsr_vol {
+            compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <5>;
+            bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
+        };
+        // DYA Studio用
+        scroll_up_down_ds: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-runtime-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            tap-ms = <20>;
             cw-binding = <&msc SCRL_DOWN>;
             ccw-binding = <&msc SCRL_UP>;
         };
-
-        rsr_vol: rsr_vol {
+        rsr_vol: rsr_vol_ds {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <5>;

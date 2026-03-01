@@ -22,6 +22,14 @@ FrostOrthoをご購入いただきありがとうございます！
 - キーマップ変更方法  
 [キーマップ変更方法](./doc/キーマップ変更方法.md)
 
+## 各種リンク
+- ケースデータ：[FrostOrtho-3dprint-data](https://github.com/imo00o/FrostOrtho-3dprint-data)  
+個人利用の範囲でしたらご自由に使用・改変いただけます。
+- 基板データ：[FrostOrtho-pcb](https://github.com/imo00o/FrostOrtho-pcb)  
+トラックボール部分の設計など一部roBaを元に設計させていただきました。
+- 初期ファームウェア：[firmware](./firmware/)
+  
+
 ## 注意事項
 - 本品はリポバッテリーを使用しています。リポバッテリーには発火等の危険性があるため十分に注意してご使用ください。
 - 充電が完了すると自動でストップするような仕組みとなっており、過充電の心配はございません。  

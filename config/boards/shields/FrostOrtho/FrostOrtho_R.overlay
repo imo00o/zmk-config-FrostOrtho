@@ -71,7 +71,7 @@
                 &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
                 &zip_xy_to_scroll_mapper 
                 &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
-                &zip_scroll_y_scaler 3 3 // Y軸スクロール量3/3倍
+                &zip_scroll_y_scaler 3 4 // Y軸スクロール量3/4倍
                 &scroll_runtime_input_processor
             >;
         };
@@ -79,12 +79,21 @@
 };
 
 &trackball_listener {
+    scroller_y {
+        layers = <5>; // 縦スクロールレイヤー
+        input-processors = <
+            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+            &zip_xy_to_scroll_mapper
+            &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
+            &zip_scroll_y_scaler 3 4 // Y軸スクロール量3/4倍
+        >;
+    };
     scroller_x {
         layers = <7>; // 横スクロールレイヤー
         input-processors = <
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
             &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 3 3 // X軸スクロール量3/3倍
+            &zip_scroll_x_scaler 3 4 // X軸スクロール量3/4倍
             &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
         >;
     };

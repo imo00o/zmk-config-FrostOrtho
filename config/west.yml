@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/inorichi
     - name: cormoran
       url-base: https://github.com/cormoran
+    - name: prospector
+      url-base: https://github.com/t-ogura
   projects:
     #　- name: zmk
     #   remote: zmkfirmware
@@ -22,6 +24,10 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3.0
+    - name: prospector-zmk-module
+      remote: prospector
+      revision: v2.1.0
+      path: modules/prospector-zmk-modul
     # DYA Studio モジュール
     - name: zmk-module-ble-management
       remote: cormoran

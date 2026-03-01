@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: imo00o
-      url-base: https://github.com/imo00o
     - name: caksoylar
-      url-base: https://github.com/imo00o
+      url-base: https://github.com/caksoylar
+    - name: inorichi
+      url-base: https://github.com/inorichi
     - name: prospector
       url-base: https://github.com/t-ogura
     - name: cormoran
@@ -19,14 +19,14 @@ manifest:
       revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: imo00o
+      remote: inorichi
       revision: main
     - name: zmk-rgbled-widget
-      remote: imo00o
-      revision: main
+      remote: caksoylar
+      revision: v0.3.0
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.0.0
+      revision: v2.1.0
       path: modules/prospector-zmk-modul
     # DYA Studio モジュール
     - name: zmk-module-ble-management

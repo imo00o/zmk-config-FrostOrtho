@@ -2,23 +2,9 @@ name: Build ZMK Firmware
 
 on:
   push:
-    branches:
-      - main-jp
-      - main-us
-      - main-jp-aml
-      - main-us-aml
-      - develop-jp
-      - develop-us
     paths:
       - 'config/**'
   pull_request:
-    branches:
-      - main-jp
-      - main-us
-      - main-jp-aml
-      - main-us-aml
-      - develop-jp
-      - develop-us
     paths:
       - 'config/**'
   workflow_dispatch:

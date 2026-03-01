@@ -2,20 +2,41 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: imo00o
-      url-base: https://github.com/imo00o
     - name: caksoylar
-      url-base: https://github.com/imo00o
+      url-base: https://github.com/caksoylar
+    - name: inorichi
+      url-base: https://github.com/inorichi
+    - name: cormoran
+      url-base: https://github.com/cormoran
   projects:
+    #　- name: zmk
+    #   remote: zmkfirmware
+    #   revision: v0.3.0
     - name: zmk
-      remote: zmkfirmware
-      revision: v0.3.0
+      remote: cormoran
+      revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: imo00o
+      remote: inorichi
       revision: main
     - name: zmk-rgbled-widget
-      remote: imo00o
+      remote: caksoylar
+      revision: v0.3.0
+    # DYA Studio モジュール
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-module-battery-history
+      remote: cormoran
+      revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: main
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
       revision: main
   self:
     path: config

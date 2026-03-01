@@ -46,13 +46,45 @@
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
         >;
 
-        scroller {
-            layers = <5>;
+        scroller_y {
+            layers = <5>; // 縦スクロールレイヤー
             input-processors = <
                 &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
-                &zip_xy_to_scroll_mapper 
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_x_scaler 1 3 // X軸スクロール量1/3倍
+                &zip_scroll_y_scaler 3 3 // Y軸スクロール量3/3倍
                 &scroll_runtime_input_processor
             >;
+        };
+        
+        scroller_x {
+            layers = <7>; // 横スクロールレイヤー
+            input-processors = <
+                &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
+                &zip_xy_to_scroll_mapper
+                &zip_scroll_x_scaler 3 3 // X軸スクロール量3/3倍
+                &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
+                &scroll_runtime_input_processor
+            >;
+        };
+    };
+};
+
+/ {
+    input_processors {
+        zip_scroll_x_scaler: zip_scroll_x_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+        zip_scroll_y_scaler: zip_scroll_y_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
         };
     };
 };

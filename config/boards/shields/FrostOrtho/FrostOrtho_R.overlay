@@ -64,17 +64,6 @@
             &zip_xy_scaler 2 3 // カーソル移動量2/3倍
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
         >;
-
-        scroller {
-            layers = <5>;
-            input-processors = <
-                &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
-                &zip_xy_to_scroll_mapper 
-                &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
-                &zip_scroll_y_scaler 3 4 // Y軸スクロール量3/4倍
-                &scroll_runtime_input_processor
-            >;
-        };
     };
 };
 
@@ -86,6 +75,7 @@
             &zip_xy_to_scroll_mapper
             &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
             &zip_scroll_y_scaler 3 4 // Y軸スクロール量3/4倍
+            &scroll_runtime_input_processor
         >;
     };
     scroller_x {

@@ -9,8 +9,8 @@ config ZMK_SPLIT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config MIPI_DBI   # zmk v0.3のままprospector scanner v2.1.0対応するため追加
-    bool
+# config MIPI_DBI   # zmk v0.3のままprospector scanner v2.1.0対応するため追加
+#     bool
 
 endif
 

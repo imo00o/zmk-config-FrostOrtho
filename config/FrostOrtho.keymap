@@ -81,8 +81,8 @@
         default_layer {
             bindings = <
 &kp Q                 &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O         &kp P
-&kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L         &kp MINUS
-&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &lt 7 PERIOD  &lt 5 SLASH
+&kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &lt 5 L       &lt 7 MINUS
+&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD    &kp SLASH
 &mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &trans     &lt 4 F10     &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
@@ -146,10 +146,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &mkp MB1  &mkp MB2  &mkp MB3  &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &trans    &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;

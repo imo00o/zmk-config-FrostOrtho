@@ -90,7 +90,7 @@
 &mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &trans     &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
-            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
+            sensor-bindings = <&vol_up_down>, <&rsr_trans>;
         };
 
         layer_1 {
@@ -156,7 +156,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans    &trans    &trans  &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
+            sensor-bindings = <&vol_up_down>, <&rsr_trans>;
         };
 
         layer_7 {

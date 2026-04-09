@@ -18,60 +18,7 @@
 &mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        timeout-ms = <35>;
-
-        combo_under {
-            bindings = <&myUnder>;
-            key-positions = <26 27>;
-        };
-
-        combo_question {
-            bindings = <&kp SLASH>;
-            key-positions = <27 28>;
-        };
-
-        combo_semicolon {
-            bindings = <&kp LS(SEMICOLON)>;
-            key-positions = <18 19>;
-        };
-
-        combo_kakko1 {
-            bindings = <&myKakko1>;
-            key-positions = <6 7>;
-        };
-
-        combo_kakko2 {
-            bindings = <&myKakko2>;
-            key-positions = <7 8>;
-        };
-
-        combo_kakko3 {
-            bindings = <&myKakko3>;
-            key-positions = <8 9>;
-        };
-
-        lang1 {
-            bindings = <&kp LANGUAGE_1>;
-            key-positions = <16 17>;
-        };
-
-        lang2 {
-            bindings = <&kp LANGUAGE_2>;
-            key-positions = <17 18>;
-        };
-
-        window_right {
-            bindings = <&kp LC(RIGHT_ARROW)>;
-            key-positions = <13 12>;
-        };
-
-        window_left {
-            bindings = <&kp LC(LEFT_ARROW)>;
-            key-positions = <11 12>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     macros {
         to_layer_0: to_layer_0 {

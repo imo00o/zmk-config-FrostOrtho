@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: inorichi
-      url-base: https://github.com/inorichi
+    - name: badjeff
+      url-base: https://github.com/badjeff
     - name: cormoran
       url-base: https://github.com/cormoran
     - name: prospector
@@ -19,8 +19,8 @@ manifest:
       revision: v0.3-branch+dya
       import: app/west.yml
     - name: zmk-pmw3610-driver
-      remote: inorichi
-      revision: main
+      remote: badjeff
+      revision: zmk-0.3
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3.0

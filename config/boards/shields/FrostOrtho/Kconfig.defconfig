@@ -9,7 +9,14 @@ config ZMK_SPLIT
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_POINTING     # paw3222
+    default y
+
+config PAW3222      # paw3222
+    default y
+
 endif
+
 
 if SHIELD_FROSTORTHO_L
 

@@ -41,7 +41,7 @@ FrostOrthoをご購入いただきありがとうございます！
   badjeffさんの設計を参考にさせていただきました。  
 - 初期ファームウェア：[firmware](./firmware/)
   
-## 互換性のあるキーキャップ・トラックボール
+## 互換性のあるキーキャップ・トラックボール・キースイッチ
 ### キーキャップ
 17mm狭ピッチのキーキャップが使用できます。  
 - ↓ 確認済みのもの ↓
@@ -81,8 +81,28 @@ FrostOrthoをご購入いただきありがとうございます！
     クラファン中のKeychron Orca echoと一緒に19mmトラックボールも！たのしみ。    
   - [トラックボール　19mm](https://costory.jp/cf-published-sku-groups/1955012598?srsltid=AfmBOorlMondrVQx9Lj0JxFvnSZV47pXovghrRmI26anNRRMT9F8t9aI)
 
+### キースイッチ
+choc v2で3ピンタイプのスイッチが使用できます。個人的に特に好きなものをピックアップしました。
+- JezailFunder 霧キースイッチ  
+  静音のリニアスイッチ。半透明な見た目がかわいくてice clearやsnow whiteに合います。  
+  静音性も打鍵感もよく、とにかくかわいい。
+  - [JezailFunder 霧キースイッチ](https://jezailfunder.jp/products/mist-switch)
+- Lofree  
+  静音リニア、リニア、タクタイルがあります。  
+  見た目よし打鍵感よしですが、ちょっとお高い。。
+  - [Lofree Switch](https://lofree.co.jp/collections/switch?srsltid=AfmBOoqIB8A_Ca5yv_3wgk3SgkCEcxW8hnxoNEF4i3au-psAORxtgS8D)
+- Kailh  
+  游舎工房やTALP KEYBOARD、AliExpress等で購入できます。  
+  - White Rain  
+  真っ白でsnow whiteにぴったり。打鍵感もいいリニアスイッチです。
+  - Ice Cream Mini  
+  クリーム色のリニアスイッチです。White Rainに比べて軽めで打鍵感もいい。
+  - Winter MINI  
+  かわいすぎる水色のタクタイルスイッチです。差し色にするとかわいい。
+
+
 ## 注意事項
 - 本品はリポバッテリーを使用しています。リポバッテリーには発火等の危険性があるため十分に注意してご使用ください。
-- ロータリーエンコーダーにスイッチ機能はございません。また、滑らかに回るようトルクを外すカスタムをしています。
+- ロータリーエンコーダーにスイッチ機能はございません。組立済み品の場合、滑らかに回るようトルクを外すカスタムをしています。
 - ケースは3Dプリンタ製のため積層痕が目立つ場合や、バリが残っている場合がございます、ご了承ください。  
 - クリアケースは長期使用により黄変の可能性がございます、ご了承ください。

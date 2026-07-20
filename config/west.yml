@@ -40,5 +40,8 @@ manifest:
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
       revision: main
+    - name: zmk-driver-iqs9151
+      remote: sekigon-gonnoc
+      revision: trackpad-generator
   self:
     path: config

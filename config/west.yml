@@ -27,19 +27,19 @@ manifest:
     # DYA Studio モジュール
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-module-battery-history
       remote: cormoran
       revision: main
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-module-runtime-input-processor
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-behavior-runtime-sensor-rotate
       remote: cormoran
-      revision: main
+      revision: zmk-v0.3.0.0
     - name: zmk-driver-iqs9151
       remote: sekigon-gonnoc
       revision: trackpad-generator

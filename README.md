@@ -24,6 +24,10 @@ FrostOrthoをご購入いただきありがとうございます！
 こちらのガイドにそって組み立ててご使用ください。  
 [自作キットビルドガイド](./doc/自作キットビルドガイド.md)
 
+- 自作キット(ケースなし)をご購入の方  
+こちらのガイドにそって組み立ててご使用ください。  
+[自作キット(ケースなし)ビルドガイド](./doc/自作キット(ケースなし)ビルドガイド.md)
+
 ## キーマップ
 - 初期キーマップ  
 [キーマップ](./doc/キーマップ.md)
@@ -63,7 +67,7 @@ FrostOrthoをご購入いただきありがとうございます！
     PBT製で質感がとてもよく、とにかくかわいい。キーケットで手に入れた方はぜひ。
     - [omuken　shell-caps](https://site.omuken.me/shell-caps/)
 
-- ↓ 持っていないものの17mmのもの ↓
+- ↓ 持っていないものの17mmのもの（追えていないだけで他にもあるはず） ↓
   - [ゆshop　flat 17mmピッチ対応 印字キーキャップ](https://booth.pm/ja/items/7299687)
   - [ゆshop　LAK chibi 17mmピッチ対応 印字キーキャップ](https://yukeyshop.booth.pm/items/8115099)
   - [DecentKeyboards　Junana MX](https://shop.yushakobo.jp/products/10754?srsltid=AfmBOoocJNuhL-f-zhDAigy13w7EH5WUQrFOSST3yTodslcEmpUNUcH-)

@@ -48,42 +48,26 @@ FrostOrthoをご購入いただきありがとうございます！
 ## 互換性のあるキーキャップ・トラックボール・キースイッチ
 ### キーキャップ
 17mm狭ピッチのキーキャップが使用できます。  
+- 推奨
+  - [LAK mini -ice keycaps-](https://shakupan.booth.pm/items/8963074)  
 - ↓ 確認済みのもの ↓
   - Kotori   
-      Blankしか持っていないのですが、Shimaenagaも形状一緒なので使用できるはず！  
     - [shakupan　Kotori Blank(Proto)](https://shakupan.booth.pm/items/6781056)
     - [小鳥屋 - Kotori Keycaps　Kotori - Shimaenaga（White）](https://kotori-kcp.booth.pm/items/7468940)
     - [小鳥屋 - Kotori Keycaps　Kotori - Shimaenaga（Black）](https://kotori-kcp.booth.pm/items/8129351)
   - NarrowCap 17  
-      刻印ありなので慣れないうちはおすすめです！
     - [ikusou　NarrowCap 17](https://booth.pm/ja/items/7406191)
   - notra  
-      PBT製で質感がとてもいいです！
     - [Plot.　notra](https://plotoftheprototype.com/products/notra)
-  - Tai-Hao  
-    半透明でかわいい。フラット形状です。
-    - [Tai-Hao MT 165 狭ピッチ対応 MX ロープロファイル キーキャップ 半透明](https://shop.beekeeb.jp/products/tai-hao-mt-165-translucent)
   - shell-caps  
-    PBT製で質感がとてもよく、とにかくかわいい。キーケットで手に入れた方はぜひ。
     - [omuken　shell-caps](https://site.omuken.me/shell-caps/)
-
-- ↓ 持っていないものの17mmのもの（追えていないだけで他にもあるはず） ↓
-  - [ゆshop　flat 17mmピッチ対応 印字キーキャップ](https://booth.pm/ja/items/7299687)
-  - [ゆshop　LAK chibi 17mmピッチ対応 印字キーキャップ](https://yukeyshop.booth.pm/items/8115099)
-  - [DecentKeyboards　Junana MX](https://shop.yushakobo.jp/products/10754?srsltid=AfmBOoocJNuhL-f-zhDAigy13w7EH5WUQrFOSST3yTodslcEmpUNUcH-)
 
 ### トラックボール
 19mmのトラックボールが使用できます。
-- shakupanさん製の手染め球  
-    FrostOrtho付属のものより少し軽めです。muinoは白しか用意できないので、違う色を使いたい方はこちら！
   - [shakupan　19mmトラックボール](https://shakupan.booth.pm/items/7667439)
-- beekeeb  
-    重量違いで2種類あります。どんどん色が増えていて本当に感謝。  
+  - [そにっく工房　軽量19mmトラックボール](https://booth.pm/ja/items/8738863) 
   - [beekeeb　19mm トラックボール用交換ボール](https://shop.beekeeb.jp/products/19mm-trackball)
   - [beekeeb　19mm トラックボール（超軽量）](https://shop.beekeeb.jp/products/19mm-light-trackball)
-- Keychron  
-    クラファン中のKeychron Orca echoと一緒に19mmトラックボールも！たのしみ。    
-  - [トラックボール　19mm](https://costory.jp/cf-published-sku-groups/1955012598?srsltid=AfmBOorlMondrVQx9Lj0JxFvnSZV47pXovghrRmI26anNRRMT9F8t9aI)
 
 ### キースイッチ
 choc v2で3ピンタイプのスイッチが使用できます。個人的に特に好きなものをピックアップしました。

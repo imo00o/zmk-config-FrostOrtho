@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/cormoran
     - name: imo00o
       url-base: https://github.com/imo00o
+    - name: kot149  # マウスジェスチャー
+      url-base: https://github.com/kot149
   projects:
     #　- name: zmk
     #   remote: zmkfirmware
@@ -21,6 +23,9 @@ manifest:
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
       revision: main
+    - name: zmk-mouse-gesture
+      remote: kot149
+      revision: v1
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3.0

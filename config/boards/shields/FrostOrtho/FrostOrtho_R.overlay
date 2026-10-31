@@ -4,6 +4,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/runtime-input-processor.dtsi>
 #include <behaviors/battery_history_request.dtsi>
+#include <mouse-gesture.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -65,6 +66,7 @@
             &zip_xy_scaler 2 3 // カーソル移動量2/3倍
             &zip_xy_transform INPUT_TRANSFORM_X_INVERT // カーソルの移動方向調整
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
+            &zip_mouse_gesture // マウスジェスチャー（方向調整後に置くこと）
         >;
     };
 };

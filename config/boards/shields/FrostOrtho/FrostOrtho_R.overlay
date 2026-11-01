@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors/runtime-input-processor.dtsi>
+#include <dt-bindings/zmk/runtime_input_processor.h>
+#include <zephyr/dt-bindings/dt-util.h>
 #include <behaviors/battery_history_request.dtsi>
 #include <mouse-gesture.dtsi>
 
@@ -20,37 +22,62 @@
         ;
 };
 
-&zip_temp_layer {
-    // キー入力後400ms以内はAMLに切り替わらない
-    require-prior-idle-ms = <400>;
-    // AMLから離脱しないキー
-    excluded-positions = <
-        5 // Y マウスジェスチャー
-        6 // U 左クリック
-        7 // I 右クリック
-        8 // O 中央クリック
-        20 // Z Shift
-        30 // Control
-        32 // Alt
-    >;
+// ========================================
+// トラックボール（DYA Studio から変更可能）
+// ここの値は初期値。DYA Studio で保存した設定があればそちらが優先される
+// ========================================
+
+// カーソル移動 + AML
+&mouse_runtime_input_processor {
+    scale-multiplier = <2>; // カーソル移動量2/3倍
+    scale-divisor = <3>;
+    x-invert; // カーソルの移動方向調整
+    y-invert;
+
+    // AML（自動マウスレイヤー）
+    // MOUSEレイヤーで &trans 以外が割り当てられたキーと修飾キーでは AML から離脱しない
+    temp-layer-enabled;
+    temp-layer = <6>;
+    temp-layer-activation-delay-ms = <400>; // キー入力後400ms以内はAMLに切り替わらない
+    temp-layer-deactivation-delay-ms = <65535>; // タイムアウト時間（最大65535ms）
+};
+
+// 縦スクロール（レイヤー5）
+&scroll_runtime_input_processor {
+    x-codes = <INPUT_REL_X>; // トラックボールのXYを受けてスクロールに変換する
+    y-codes = <INPUT_REL_Y>;
+    xy-to-scroll-enabled;
+    active-layers = <BIT(5)>;
+    scale-multiplier = <2>; // スクロール量2/3倍
+    scale-divisor = <3>;
+    x-invert; // スクロール方向調整
+    axis-snap-mode = <AXIS_SNAP_MODE_Y>; // 縦方向のみ
+    axis-snap-threshold = <65535>; // 横方向へのロック解除をしない
 };
 
 / {
-    input_processors {
-        zip_scroll_x_scaler: zip_scroll_x_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_HWHEEL>;
-            track-remainders;
-        };
-        zip_scroll_y_scaler: zip_scroll_y_scaler {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_WHEEL>;
-            track-remainders;
-        };
+    // 横スクロール（レイヤー7）
+    hscroll_runtime_input_processor: hscroll_runtime_input_processor {
+        compatible = "zmk,input-processor-runtime";
+        processor-label = "hscroll";
+        type = <INPUT_EV_REL>;
+        x-codes = <INPUT_REL_X>;
+        y-codes = <INPUT_REL_Y>;
+        xy-to-scroll-enabled;
+        active-layers = <BIT(7)>;
+        scale-multiplier = <2>; // スクロール量2/3倍
+        scale-divisor = <3>;
+        rotation-degrees = <0>;
+        track-remainders;
+        x-invert; // スクロール方向調整
+        axis-snap-mode = <AXIS_SNAP_MODE_X>; // 横方向のみ
+        axis-snap-threshold = <65535>; // 縦方向へのロック解除をしない
+
+        temp-layer-transparent-behavior = <&trans>;
+        temp-layer-kp-behavior = <&kp>;
+        temp-layer-keep-keycodes = <LEFT_CONTROL LEFT_SHIFT LEFT_ALT LEFT_GUI RIGHT_CONTROL RIGHT_SHIFT RIGHT_ALT RIGHT_GUI>;
+
+        #input-processor-cells = <0>;
     };
 };
 
@@ -60,36 +87,11 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-        // input-processors = <&mouse_runtime_input_processor>;
         input-processors = <
             &mouse_runtime_input_processor
-            &zip_temp_layer 6 100000 // AMLレイヤー、タイムアウト時間
-            &zip_xy_scaler 2 3 // カーソル移動量2/3倍
-            &zip_xy_transform INPUT_TRANSFORM_X_INVERT // カーソルの移動方向調整
-            &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
             &zip_mouse_gesture // マウスジェスチャー（方向調整後に置くこと）
-        >;
-    };
-};
-
-&trackball_listener {
-    scroller_y {
-        layers = <5>; // 縦スクロールレイヤー
-        input-processors = <
-            // &scroll_runtime_input_processor
-            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 0 3 // X軸スクロール量0/3倍
-            &zip_scroll_y_scaler 2 3 // Y軸スクロール量2/3倍
-        >;
-    };
-    scroller_x {
-        layers = <7>; // 横スクロールレイヤー
-        input-processors = <
-            &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
-            &zip_xy_to_scroll_mapper
-            &zip_scroll_x_scaler 2 3 // X軸スクロール量2/3倍
-            &zip_scroll_y_scaler 0 3 // Y軸スクロール量0/3倍
+            &scroll_runtime_input_processor
+            &hscroll_runtime_input_processor
         >;
     };
 };

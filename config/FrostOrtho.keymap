@@ -14,9 +14,6 @@
     quick-tap-ms = <0>;
 };
 
-// AML クリックしたときにタイムアウトを延長
-&mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
-
 // マウスジェスチャー（AMLのYキーを長押ししながらボールを動かす）
 &zip_mouse_gesture {
     stroke-size = <50>; // 1ストロークと判定する移動量
@@ -167,12 +164,13 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
+        // AML: &trans 以外のキーは押しても AML から離脱しない
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &mouse_gesture_kp 0 Y  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans                 &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans              &trans                 &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans                 &trans    &trans    &trans    &trans
+&trans                &trans  &trans        &trans  &trans              &mouse_gesture_kp 0 Y  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans                &trans  &trans        &trans  &trans              &trans                 &trans    &trans    &trans    &trans
+&mt LEFT_SHIFT Z      &trans  &trans        &trans  &trans              &trans                 &trans    &trans    &trans    &trans
+&mt LEFT_CONTROL TAB  &trans  &kp LEFT_ALT  &trans  &trans  &trans      &trans                 &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;

@@ -17,27 +17,27 @@
 // AML クリックしたときにタイムアウトを延長
 &mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
 
-// マウスジェスチャー（AMLの右クリックキーを長押ししながらボールを動かす）
+// マウスジェスチャー（AMLのYキーを長押ししながらボールを動かす）
 &zip_mouse_gesture {
     stroke-size = <200>; // 1ストロークと判定する移動量
     enable-eager-mode;
     suppress-movement; // ジェスチャー中はカーソルを動かさない
 
     history_back {
-        pattern = <GESTURE_LEFT>;
+        pattern = <GESTURE_UP>;
         bindings = <&kp LA(LEFT)>; // 戻る
     };
     history_forward {
-        pattern = <GESTURE_RIGHT>;
+        pattern = <GESTURE_DOWN>;
         bindings = <&kp LA(RIGHT)>; // 進む
     };
-    close_tab {
-        pattern = <GESTURE_DOWN GESTURE_RIGHT>;
-        bindings = <&kp LC(W)>; // タブを閉じる
+    prev_tab {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LC(LS(TAB))>; // 前のタブ
     };
-    new_tab {
-        pattern = <GESTURE_DOWN GESTURE_LEFT>;
-        bindings = <&kp LC(T)>; // 新しいタブ
+    next_tab {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LC(TAB)>; // 次のタブ
     };
 };
 
@@ -169,10 +169,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mouse_gesture_mkp 0 MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans                    &trans    &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans                    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans                    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &mouse_gesture_kp 0 Y  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans  &trans  &trans  &trans  &trans              &trans                 &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans              &trans                 &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans                 &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;

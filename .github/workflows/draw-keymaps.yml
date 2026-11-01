@@ -1,0 +1,25 @@
+# キーマップの画像（SVG）を keymap-drawer で生成して keymap-drawer/ にコミットする
+# https://github.com/caksoylar/keymap-drawer
+name: Draw ZMK keymaps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'config/*.keymap'
+      - 'config/*.json'
+      - 'keymap_drawer.config.yaml'
+
+jobs:
+  draw:
+    # v0.23.0
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@a44809b8cc718cbff646641f49a8f71a9368336d
+    permissions:
+      contents: write # 生成した画像をリポジトリにコミットするため
+    with:
+      install_version: '0.23.0'
+      keymap_patterns: 'config/*.keymap'
+      config_path: 'keymap_drawer.config.yaml' # 表示のカスタマイズ用（なければ無視される）
+      json_path: 'config' # config/FrostOrtho.json を物理配列として使う
+      output_folder: 'keymap-drawer'
+      commit_message: 'キーマップ画像を更新'

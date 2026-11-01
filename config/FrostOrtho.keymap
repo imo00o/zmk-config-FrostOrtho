@@ -19,24 +19,24 @@
 
 // マウスジェスチャー（AMLのYキーを長押ししながらボールを動かす）
 &zip_mouse_gesture {
-    stroke-size = <200>; // 1ストロークと判定する移動量
+    stroke-size = <100>; // 1ストロークと判定する移動量
     enable-eager-mode;
     suppress-movement; // ジェスチャー中はカーソルを動かさない
 
     history_back {
-        pattern = <GESTURE_UP>;
+        pattern = <GESTURE_LEFT>;
         bindings = <&kp LA(LEFT)>; // 戻る
     };
     history_forward {
-        pattern = <GESTURE_DOWN>;
+        pattern = <GESTURE_RIGHT>;
         bindings = <&kp LA(RIGHT)>; // 進む
     };
     prev_tab {
-        pattern = <GESTURE_LEFT>;
+        pattern = <GESTURE_UP>;
         bindings = <&kp LC(LS(TAB))>; // 前のタブ
     };
     next_tab {
-        pattern = <GESTURE_RIGHT>;
+        pattern = <GESTURE_DOWN>;
         bindings = <&kp LC(TAB)>; // 次のタブ
     };
 };

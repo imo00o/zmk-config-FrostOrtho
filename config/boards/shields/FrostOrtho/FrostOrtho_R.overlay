@@ -51,6 +51,7 @@
     scale-multiplier = <2>; // スクロール量2/3倍
     scale-divisor = <3>;
     x-invert; // スクロール方向調整
+    y-invert;
     axis-snap-mode = <AXIS_SNAP_MODE_Y>; // 縦方向のみ
     axis-snap-threshold = <65535>; // 横方向へのロック解除をしない
 };
@@ -69,7 +70,6 @@
         scale-divisor = <3>;
         rotation-degrees = <0>;
         track-remainders;
-        x-invert; // スクロール方向調整
         axis-snap-mode = <AXIS_SNAP_MODE_X>; // 横方向のみ
         axis-snap-threshold = <65535>; // 縦方向へのロック解除をしない
 

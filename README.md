@@ -8,11 +8,16 @@ FrostOrthoをご購入いただきありがとうございます！
 - Discordサポートサーバー：[FrostOrthoSupport](https://discord.gg/swPe2Q3npJ)
 
 ## バージョン
-- 2026年6月22日以降にご購入いただいた方  
-[v1.2.0(現main)](https://github.com/imo00o/zmk-config-FrostOrtho)  
-- 2026年5月～6月中旬にご購入いただいた方  
+いつ購入したものでも、ファームウェアは最新のものをご使用いただけます。  
+※ キーケット以前に購入した方は、センサーモジュール交換しているもののみ最新のファームウェアに対応しています
+
+- 2026年11月以降にご購入いただいた方向け  
+[v1.3.0(現main)](https://github.com/imo00o/zmk-config-FrostOrtho)  
+- 2026年6月22日～10月末にご購入いただいた方向け  
+[v1.2.0](https://github.com/imo00o/zmk-config-FrostOrtho/tree/v1.2.0)  
+- 2026年5月～6月中旬にご購入いただいた方向け  
 [v1.1.0](https://github.com/imo00o/zmk-config-FrostOrtho/tree/v1.1.0)  
-- キーケット以前にご購入いただいた方  
+- キーケット以前にご購入いただいた方向け  
 [v1.0.0](https://github.com/imo00o/zmk-config-FrostOrtho/tree/v1.0.0)  
 
 ## ユーザーガイド

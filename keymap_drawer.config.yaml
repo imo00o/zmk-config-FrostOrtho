@@ -1,0 +1,81 @@
+# keymap-drawer の表示設定（PCのキーボード設定がJIS配列の場合に入力される文字で表示する）
+# https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md
+draw_config:
+  dark_mode: auto
+  # レイヤー名が数字のため、数字キーがレイヤーへのリンク扱いで下線付きになるのを防ぐ
+  svg_extra_style: |
+    text.layer-activator { text-decoration: none; }
+parse_config:
+  trans_legend: {t: '', type: trans}
+  raw_binding_map:
+    '&mouse_gesture_kp 0 Y': {t: 'Y', h: 'Gesture'}
+    '&mkp MB1': 'MB1'
+    '&mkp MB2': 'MB2'
+    '&mkp MB3': 'MB3'
+    '&bt BT_SEL 0': 'BT SEL 0'
+    '&bt BT_SEL 1': 'BT SEL 1'
+    '&bt BT_SEL 2': 'BT SEL 2'
+    '&bt BT_SEL 3': 'BT SEL 3'
+    '&bt BT_SEL 4': 'BT SEL 4'
+    '&studio_unlock': 'Studio'
+    '&screenshot': 'スクショ'
+  zmk_keycode_map:
+    # JIS配列で入力される記号（Shiftなし）
+    MINUS: '-'
+    EQUAL: '^'
+    LEFT_BRACKET: '@'
+    RIGHT_BRACKET: '['
+    BACKSLASH: ']'
+    SEMICOLON: ';'
+    SQT: ':'
+    COMMA: ','
+    PERIOD: '.'
+    SLASH: '/'
+    INT_YEN: '¥'
+    INTERNATIONAL_1: '\'
+    # JIS配列で入力される記号（Shiftあり）
+    LS(N1): '!'
+    LS(N2): '"'
+    LS(N3): '#'
+    LS(NUMBER_3): '#'
+    LS(N4): '$'
+    LS(NUMBER_4): '$'
+    LS(N5): '%'
+    LS(NUMBER_5): '%'
+    LS(N6): '&'
+    LS(NUMBER_6): '&'
+    LS(N7): "'"
+    LS(N8): '('
+    LS(NUMBER_8): '('
+    LS(N9): ')'
+    LS(NUMBER_9): ')'
+    LS(NUMBER_1): '!'
+    LS(MINUS): '='
+    LS(SEMICOLON): '+'
+    LS(SQT): '*'
+    LS(LEFT_BRACKET): '`'
+    LS(INT_YEN): '|'
+    # キー名
+    GRAVE: '半角 全角'
+    LANG_HANJA: 'LANG2'
+    LEFT_SHIFT: 'Shift'
+    RIGHT_SHIFT: 'Shift'
+    LEFT_CONTROL: 'Ctrl'
+    LEFT_ALT: 'Alt'
+    LEFT_WIN: 'Win'
+    ENTER: '↵'
+    BACKSPACE: 'BS'
+    SPACE: 'Space'
+    TAB: 'Tab'
+    ESCAPE: 'Esc'
+    DEL: 'Del'
+    HOME: 'Home'
+    END: 'End'
+    UP_ARROW: '↑'
+    DOWN_ARROW: '↓'
+    LEFT_ARROW: '←'
+    RIGHT_ARROW: '→'
+    LC(Z): 'Ctrl+Z'
+    LC(Y): 'Ctrl+Y'
+    LC(INS): 'Ctrl+Ins'
+    LS(INS): 'Shift+Ins'

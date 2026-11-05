@@ -5,6 +5,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <behaviors/runtime-sensor-rotate.dtsi>
+#include <mouse-gesture.dtsi>
 
 #define MOUSE 6
 
@@ -13,8 +14,29 @@
     quick-tap-ms = <0>;
 };
 
-// AML クリックしたときにタイムアウトを延長
-&mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
+// マウスジェスチャー（AMLのYキーを長押ししながらボールを動かす）
+&zip_mouse_gesture {
+    stroke-size = <50>; // 1ストロークと判定する移動量
+    enable-eager-mode;
+    suppress-movement; // ジェスチャー中はカーソルを動かさない
+
+    history_back {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LA(LEFT)>; // 戻る
+    };
+    history_forward {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LA(RIGHT)>; // 進む
+    };
+    prev_tab {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(TAB)>; // 次のタブ
+    };
+    next_tab {
+        pattern = <GESTURE_DOWN>;
+        bindings = <&kp LC(LS(TAB))>; // 前のタブ
+    };
+};
 
 / {
     combos { compatible = "zmk,combos"; };
@@ -81,7 +103,7 @@
 &kp Q                 &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O         &kp P
 &kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L         &lt 5 MINUS
 &mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD    &lt 7 SLASH
-&mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &trans     &lt 4 F10     &mt RIGHT_SHIFT INTERNATIONAL_1
+&mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &kp GRAVE  &lt 4 F10     &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
@@ -142,12 +164,13 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
+        // AML: &trans 以外のキーは押しても AML から離脱しない
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&trans                &trans  &trans        &trans  &trans              &mouse_gesture_kp 0 Y  &mkp MB1  &mkp MB2  &mkp MB3  &trans
+&trans                &trans  &trans        &trans  &trans              &trans                 &trans    &trans    &trans    &trans
+&mt LEFT_SHIFT Z      &trans  &trans        &trans  &trans              &trans                 &trans    &trans    &trans    &trans
+&mt LEFT_CONTROL TAB  &trans  &kp LEFT_ALT  &trans  &trans  &trans      &trans                 &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
